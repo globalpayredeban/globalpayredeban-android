@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_add_source_cardholdername_ml"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/add_card_element_vertical_margin">
+
+            <!--In future releases we will remove the android:digits restriction
+            to support international postal codes.-->
+            <com.redeban.payment.view.RedebanEditText
+                android:id="@+id/et_add_source_cardholdername_ml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/acc_label_cardholdername"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/add_card_element_vertical_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.redeban.payment.view.IconTextInputLayout
+                android:id="@+id/tl_add_source_card_number_ml"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/acc_label_card_number">
+
+                <com.redeban.payment.view.CardNumberEditText
+                    android:id="@+id/et_add_source_card_number_ml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="@string/valid_digits"
+                    android:drawableStart="@drawable/ic_unknown"
+                    android:drawableLeft="@drawable/ic_unknown"
+                    android:drawablePadding="@dimen/card_icon_multiline_padding"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/et_add_source_expiry_ml"
+                    android:nextFocusForward="@+id/et_add_source_expiry_ml" />
+
+            </com.redeban.payment.view.IconTextInputLayout>
+
+
+            <ImageButton
+                android:id="@+id/imageButtonScanCard"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/app_name"
+                android:padding="6dp"
+                android:tint="#595C63"
+                app:srcCompat="@drawable/ic_photo_camera_black_24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_row_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/add_card_element_vertical_margin"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_add_source_expiry_ml"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/add_card_expiry_middle_margin"
+                android:layout_marginRight="@dimen/add_card_expiry_middle_margin"
+                android:layout_weight="1"
+                android:hint="@string/acc_label_expiry_date">
+
+                <com.redeban.payment.view.ExpiryDateEditText
+                    android:id="@+id/et_add_source_expiry_ml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:maxLength="@integer/date_length"
+                    android:nextFocusDown="@+id/et_add_source_cvc_ml"
+                    android:nextFocusForward="@+id/et_add_source_cvc_ml" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_add_source_cvc_ml"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/add_card_expiry_middle_margin"
+                android:layout_marginRight="@dimen/add_card_expiry_middle_margin"
+                android:layout_weight="1">
+
+                <com.redeban.payment.view.RedebanEditText
+                    android:id="@+id/et_add_source_cvc_ml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="@string/valid_digits"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/et_add_source_postal_ml"
+                    android:nextFocusForward="@+id/et_add_source_postal_ml" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_add_source_postal_ml"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <!--In future releases we will remove the android:digits restriction
+                to support international postal codes.-->
+                <com.redeban.payment.view.RedebanEditText
+                    android:id="@+id/et_add_source_postal_ml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="@string/valid_digits"
+                    android:hint="@string/acc_label_zip"
+                    android:inputType="number"
+                    android:maxLength="5" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/third_row_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/add_card_element_vertical_margin"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_add_source_fiscal_number_ml"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/add_card_expiry_middle_margin"
+                android:layout_marginRight="@dimen/add_card_expiry_middle_margin"
+                android:layout_weight="1"
+                android:hint="@string/documento_de_identificacion">
+
+                <com.redeban.payment.view.RedebanEditText
+                    android:id="@+id/et_add_source_fiscal_number_ml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="@string/valid_digits"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusRight="@+id/et_add_source_nip_ml"
+                    android:nextFocusDown="@+id/et_add_source_nip_ml"
+                    android:nextFocusForward="@+id/et_add_source_nip_ml" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/four_row_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/add_card_element_vertical_margin"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_add_source_nip_ml"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/add_card_expiry_middle_margin"
+                android:layout_marginRight="@dimen/add_card_expiry_middle_margin"
+                android:layout_weight="1">
+
+                <com.redeban.payment.view.RedebanEditText
+                    android:id="@+id/et_add_source_nip_ml"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="@string/valid_digits"
+                    android:hint="@string/clave_tuya"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/buttonHideNip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg_transparent"
+                android:text="Continuar sin Clave"
+                android:textColor="?colorAccent" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewRedebanLogo"
+            android:layout_width="215dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/logo_globalpay" />
+    </LinearLayout>
+</merge>
