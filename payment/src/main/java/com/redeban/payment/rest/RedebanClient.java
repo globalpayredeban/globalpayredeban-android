@@ -5,6 +5,7 @@ import android.content.Context;
 import com.redeban.payment.util.RedebanUtils;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -37,6 +38,10 @@ public class RedebanClient {
 
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+            builder.connectTimeout(30, TimeUnit.SECONDS);
+            builder.readTimeout(30, TimeUnit.SECONDS);
+            builder.writeTimeout(30, TimeUnit.SECONDS);
 
             builder.addInterceptor(new Interceptor() {
                 @Override public Response intercept(Chain chain) throws IOException {
