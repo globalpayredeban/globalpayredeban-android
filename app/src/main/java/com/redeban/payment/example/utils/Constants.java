@@ -11,16 +11,16 @@ public class Constants {
     public static String USER_EMAIL = "dev@paymentez.com";
 
     //Is Redeban SDK DEV environment?
-    public static boolean REDEBAN_IS_TEST_MODE = true;
+    public static boolean REDEBAN_IS_TEST_MODE = false;
 
     //Ask the Redeban team for it
-    public static String REDEBAN_CLIENT_APP_CODE = "IOS-CO-CLIENT";
+    public static String REDEBAN_CLIENT_APP_CODE = "GPAY-CO-CLIENT";
 
     //Ask the Redeban team for it.
-    public static String REDEBAN_CLIENT_APP_KEY = "AKKqsezFDHtanNv1G0ARyxb8DiYARE";
+    public static String REDEBAN_CLIENT_APP_KEY = "Le2OTJH75ySiJm7RzUbP4rQ9GlylJQ";
 
-    //Backend Deployed from https://github.com/paymentez/example-java-backend
-    public static String BACKEND_URL = "https://example-paymentez-backend.herokuapp.com";
+    //Backend Deployed from https://github.com/globalpayredeban/example-java-backend
+    public static String BACKEND_URL = "https://example-redeban-backend-v2.herokuapp.com/";
 
 
 }
