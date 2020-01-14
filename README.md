@@ -420,7 +420,7 @@ El cuarto argumento del addCard es un objeto de tipo Card. Un objeto Card contie
 El quinto argumento tokenCallBack es un callback que usted provee para manejar las respuestas recibidas de Redeban.
 
 
-The fifth argument tokenCallback is a callback you provide to handle responses from Paymentez.
+The fifth argument tokenCallback is a callback you provide to handle responses from Redeban.
 Deberá enviar el token a su servidor para procesar onSuccess y notificar al usuario onError.
 
 Aquí se muestra un ejemplo de implementación de callback del token:
@@ -486,7 +486,7 @@ Nota: la aplicación requiere [Android SDK](https://developer.android.com/studio
 Antes de que pueda pueda correr la aplicación PaymentStore, ested necesita proveerla con las credenciales de Redeban y un backend de muestra.
 
 1. Si aún no cuenta con credenciales, pídalas a su contancto en el equipo de Redeban.
-2. Dirígase a https://github.com/redeban/example-java-backend y haga click en "Deploy to Heroku" (es posible que tengas que registrarte para obtener una cuenta de Heroku como parte de este proceso). Proporcione sus credenciales de servidor de Redeban `REDEBAN_SERVER_APP_CODE` y `REDEBAN_SERVER_APP_KEY`en los campos "Env". Haga click en "Deloy for Free".
+2. Dirígase a https://github.com/globalpayredeban/example-java-backend y haga click en "Deploy to Heroku" (es posible que tengas que registrarte para obtener una cuenta de Heroku como parte de este proceso). Proporcione sus credenciales de servidor de Redeban `REDEBAN_SERVER_APP_CODE` y `REDEBAN_SERVER_APP_KEY`en los campos "Env". Haga click en "Deploy for Free".
 3. Abra el proyecto en Android Studio.
 4. Reemplace las constantes  `REDEBAN_CLIENT_APP_CODE` y `REDEBAN_CLIENT_APP_KEY` en Constants.java con sus propias credenciales de Redeban.
 5. Reemplace la variable `BACKEND_URL` en el archivo Constants.java con la URL de la aplicación que Heroku le proporciona (por ejemplo," https://my-example-app.herokuapp.com ")
