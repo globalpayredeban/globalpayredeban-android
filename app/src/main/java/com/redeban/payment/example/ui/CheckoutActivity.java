@@ -74,7 +74,7 @@ public class CheckoutActivity extends AppCompatActivity {
                     pd.setMessage("");
                     pd.show();
 
-                    double ORDER_AMOUNT = 10.5;
+                    double ORDER_AMOUNT = 1050;
                     String ORDER_ID = ""+System.currentTimeMillis();
                     String ORDER_DESCRIPTION = "ORDER #" + ORDER_ID;
                     String DEV_REFERENCE = ORDER_ID;
