@@ -12,7 +12,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class RedebanUtils {
 
 
-    public static String SERVER_DEV_URL = "https://ccapi-qa.globalpay.com.co";
+    public static String SERVER_DEV_URL = "https://ccapi-stg.globalpay.com.co";
     public static String SERVER_PROD_URL = "https://ccapi.globalpay.com.co";
 
     private static String getUniqToken(String auth_timestamp, String redeban_client_app_key) {
