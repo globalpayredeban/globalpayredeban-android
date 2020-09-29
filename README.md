@@ -9,9 +9,18 @@ Redeban Payment Android SDK is a library that allows developers to easily connec
 
 ### Android Studio (or Gradle)
 
+Add it in your root build.gradle at the end of repositories:
+
+    allprojects {
+            repositories {
+                ...
+                maven { url 'https://jitpack.io' }
+            }
+        }
+        
 Add this line to your app's `build.gradle` inside the `dependencies` section:
 
-    implementation 'com.redeban:payment-android:1.2.8'
+    implementation 'com.github.globalpayredeban:globalpayredeban-android:1.2.9'
 
 ### ProGuard
 
